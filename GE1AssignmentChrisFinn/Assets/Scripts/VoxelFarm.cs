@@ -17,7 +17,11 @@ public class VoxelFarm : MonoBehaviour
     void Start()
     {
 
+        myPos = this.transform.position;
+
         generateTerrain();
+
+
 
     }
 
@@ -30,7 +34,7 @@ public class VoxelFarm : MonoBehaviour
     void generateTerrain()
     {
 
-        myPos = this.transform.position;
+        
 
         int cols = 100;
         int rows = 100;
