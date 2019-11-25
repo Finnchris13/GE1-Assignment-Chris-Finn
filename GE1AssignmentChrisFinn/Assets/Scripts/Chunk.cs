@@ -42,7 +42,24 @@ public class Chunk : MonoBehaviour
                 for (int z = 0; z < VoxelData.ChunkWidth; z++)
                 {
 
-                    voxelMap[x, y, z] = 0;
+                    if (y < 1)
+                    {
+
+                        voxelMap[x, y, z] = 0;
+
+                    }
+                    else if (y == VoxelData.ChunkHeight - 1)
+                    {
+
+                        voxelMap[x, y, z] = 3;
+
+                    }
+                    else
+                    {
+
+                        voxelMap[x, y, z] = 1;
+
+                    }
 
                 }
             }
@@ -91,12 +108,14 @@ public class Chunk : MonoBehaviour
             if (!CheckVoxel(pos + VoxelData.faceChecks[p]))
             {
 
+                byte blockID = voxelMap[(int)pos.x, (int)pos.y, (int)pos.z];
+
                 vertices.Add(pos + VoxelData.voxelVerts[VoxelData.voxelTris[p, 0]]);
                 vertices.Add(pos + VoxelData.voxelVerts[VoxelData.voxelTris[p, 1]]);
                 vertices.Add(pos + VoxelData.voxelVerts[VoxelData.voxelTris[p, 2]]);
                 vertices.Add(pos + VoxelData.voxelVerts[VoxelData.voxelTris[p, 3]]);
 
-                AddTexture(9);
+                AddTexture(world.blockTypes[blockID].getTextureID(p));
 
                 triangles.Add(vertexIndex);
                 triangles.Add(vertexIndex + 1);
