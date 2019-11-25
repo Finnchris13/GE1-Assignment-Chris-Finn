@@ -51,7 +51,7 @@ public class Chunk : MonoBehaviour
                     else if (y == VoxelData.ChunkHeight - 1)
                     {
 
-                        voxelMap[x, y, z] = 3;
+                        voxelMap[x, y, z] = 2;
 
                     }
                     else
