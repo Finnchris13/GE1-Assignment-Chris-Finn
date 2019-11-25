@@ -45,6 +45,9 @@ public class VoxelData : MonoBehaviour
     public static readonly int[,] voxelTris = new int[6,4]
     {
 
+        // back, front, top, bottom, left, right
+        
+
         {0, 3, 1, 2},
         {5, 6, 4, 7},
         {3, 7, 2, 6},

@@ -96,7 +96,7 @@ public class Chunk : MonoBehaviour
                 vertices.Add(pos + VoxelData.voxelVerts[VoxelData.voxelTris[p, 2]]);
                 vertices.Add(pos + VoxelData.voxelVerts[VoxelData.voxelTris[p, 3]]);
 
-                AddTexture(0);
+                AddTexture(9);
 
                 triangles.Add(vertexIndex);
                 triangles.Add(vertexIndex + 1);
