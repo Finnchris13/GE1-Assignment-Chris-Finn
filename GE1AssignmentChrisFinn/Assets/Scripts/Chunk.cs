@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Chunk : MonoBehaviour
+public class Chunk 
 {
 
-    public MeshRenderer meshRenderer;
-    public MeshFilter meshFilter;
+    GameObject chunkObject;
+
+    MeshRenderer meshRenderer;
+    MeshFilter meshFilter;
+
+    public ChunkCoord coord;
 
     int vertexIndex = 0;
     List<Vector3> vertices = new List<Vector3>();
@@ -17,19 +21,27 @@ public class Chunk : MonoBehaviour
 
     World world;
         
-
-    // Start is called before the first frame update
-    void Start()
+    public Chunk (ChunkCoord _coord, World _world)
     {
 
-        world = GameObject.Find("World").GetComponent<World>();
+        coord = _coord;
+
+        world = _world;
+        chunkObject = new GameObject();
+        meshFilter = chunkObject.AddComponent<MeshFilter>();
+        meshRenderer = chunkObject.AddComponent<MeshRenderer>();
+
+        meshRenderer.material = world.material;
+        chunkObject.transform.SetParent(world.transform);
+        chunkObject.transform.position = new Vector3(coord.x * VoxelData.ChunkWidth, 0f, coord.z * VoxelData.ChunkWidth);
+        chunkObject.name = "Chunk" + coord.x + "," + coord.z;
+
+
 
         PopulateVoxelMap();
-
         CreateMeshData();
-
         CreateMesh();
-      
+
     }
 
     void PopulateVoxelMap()
@@ -169,4 +181,20 @@ public class Chunk : MonoBehaviour
     {
         
     }
+}
+
+public class ChunkCoord
+{
+
+    public int x;
+    public int z;
+
+    public ChunkCoord (int _x, int _z)
+    {
+
+        x = _x;
+        z = _z;
+
+    }
+
 }

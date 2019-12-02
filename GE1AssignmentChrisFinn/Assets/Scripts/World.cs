@@ -12,7 +12,10 @@ public class World : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        Chunk newChunk = new Chunk(new ChunkCoord(0, 0), this);
+        Chunk newChunk2 = new Chunk(new ChunkCoord(1, 0), this);
+
     }
 
     // Update is called once per frame
