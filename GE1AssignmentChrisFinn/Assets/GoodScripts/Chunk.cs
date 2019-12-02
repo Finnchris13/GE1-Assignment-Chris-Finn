@@ -72,6 +72,7 @@ public class Chunk
                 for (int z = 0; z < VoxelData.ChunkWidth; z++)
                 {
 
+                    if (world.blockTypes[voxelMap[x, y, z]].isSolid)
                     AddVoxelDataToChunk(new Vector3(x, y, z));
 
                 }
@@ -202,6 +203,18 @@ public class ChunkCoord
 
         x = _x;
         z = _z;
+
+    }
+
+    public bool Equals (ChunkCoord other)
+    {
+
+        if (other == null)
+            return false;
+        else if (other.x == x && other.z == z)
+            return true;
+        else
+            return false;
 
     }
 

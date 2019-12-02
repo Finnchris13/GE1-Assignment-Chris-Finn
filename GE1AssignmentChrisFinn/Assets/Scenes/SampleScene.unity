@@ -801,6 +801,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81a8e3dffc0cb9a4a863ae74b08e1146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  seed: 2147483647
+  biome: {fileID: 11400000, guid: cb977af690a386641a8b9f7d7e2225ca, type: 2}
   player: {fileID: 232659806}
   spawnPosition: {x: 0, y: 0, z: 0}
   material: {fileID: 2100000, guid: 41718ee964606024cb9d95b8cee18c34, type: 2}
@@ -837,6 +839,22 @@ MonoBehaviour:
     bottomFaceTexture: 0
     leftFaceTexture: 0
     rightFaceTexture: 0
+  - blockName: Sand
+    isSolid: 1
+    backFaceTexture: 10
+    frontFaceTexture: 10
+    topFaceTexture: 10
+    bottomFaceTexture: 10
+    leftFaceTexture: 10
+    rightFaceTexture: 10
+  - blockName: Dirt
+    isSolid: 1
+    backFaceTexture: 1
+    frontFaceTexture: 1
+    topFaceTexture: 1
+    bottomFaceTexture: 1
+    leftFaceTexture: 1
+    rightFaceTexture: 1
 --- !u!4 &1031691617
 Transform:
   m_ObjectHideFlags: 0
