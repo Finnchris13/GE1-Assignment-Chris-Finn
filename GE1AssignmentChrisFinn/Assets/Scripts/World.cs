@@ -5,6 +5,9 @@ using UnityEngine;
 public class World : MonoBehaviour
 {
 
+    public Transform player;
+    public Vector3 spawnPosition;
+
     public Material material;
     public BlockType[] blockTypes;
 
@@ -15,16 +18,18 @@ public class World : MonoBehaviour
     void Start()
     {
 
+        spawnPosition = new Vector3((VoxelData.WorldSizeInChunks * VoxelData.ChunkWidth) / 2f, VoxelData.ChunkHeight, (VoxelData.WorldSizeInChunks * VoxelData.ChunkWidth) / 2f);
         GenerateWorld();
+        
 
     }
 
     void GenerateWorld()
     {
 
-        for (int x = 0; x < VoxelData.WorldSizeInChunks; x++)
+        for (int x = (VoxelData.WorldSizeInChunks /2) - VoxelData.ViewDistanceInChunks; x < (VoxelData.WorldSizeInChunks / 2) + VoxelData.ViewDistanceInChunks; x++)
         {
-            for (int z = 0; z < VoxelData.WorldSizeInChunks; z++)
+            for (int z = (VoxelData.WorldSizeInChunks / 2) - VoxelData.ViewDistanceInChunks; z < (VoxelData.WorldSizeInChunks / 2) + VoxelData.ViewDistanceInChunks; z++)
             {
 
                 CreateNewChunk(x, z);
@@ -33,6 +38,8 @@ public class World : MonoBehaviour
 
 
         }
+
+        player.position = spawnPosition;
 
     }
 
