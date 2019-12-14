@@ -17,11 +17,13 @@ public class World : MonoBehaviour
     Chunk[,] chunks = new Chunk[VoxelData.WorldSizeInChunks, VoxelData.WorldSizeInChunks];
 
     List<ChunkCoord> activeChunks = new List<ChunkCoord>();
-    ChunkCoord playerChunkCoord;
+    public ChunkCoord playerChunkCoord;
     ChunkCoord playerLastChunkCoord;
 
     List<ChunkCoord> chunksToCreate = new List<ChunkCoord>();
     private bool isCreatingChunks;
+
+    public GameObject debugText;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +50,11 @@ public class World : MonoBehaviour
 
         if (chunksToCreate.Count > 0 && !isCreatingChunks)
             StartCoroutine("CreateChunks");
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            debugText.SetActive(!debugText.activeSelf);
+        }
 
     }
 
