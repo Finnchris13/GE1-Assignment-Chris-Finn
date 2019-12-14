@@ -25,8 +25,8 @@ public class CameraScript : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
 
-        float rotAmountX = mouseX * mouseSensitivity * Time.deltaTime;
-        float rotAmountY = mouseY * mouseSensitivity * Time.deltaTime;
+        float rotAmountX = mouseX * mouseSensitivity;
+        float rotAmountY = mouseY * mouseSensitivity;
 
         xAxisClamp -= rotAmountY;
 
