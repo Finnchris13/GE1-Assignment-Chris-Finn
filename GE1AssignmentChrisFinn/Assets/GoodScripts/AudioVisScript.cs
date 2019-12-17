@@ -10,6 +10,9 @@ public class AudioVisScript : MonoBehaviour
     public static float[] _freqBands = new float[8];
     public static float[] _bandBuffer = new float[8];
 
+    public float decreaseFloat;
+    public float freqDecreaseFloat;
+
     float[] _bufferDecrease = new float[8];
 
     // Start is called before the first frame update
@@ -34,13 +37,13 @@ public class AudioVisScript : MonoBehaviour
             if (_freqBands [g] > _bandBuffer[g])
             {
                 _bandBuffer[g] = _freqBands[g];
-                _bufferDecrease[g] = 0.005f;
+                _bufferDecrease[g] = decreaseFloat;
             }
 
             if (_freqBands[g] < _bandBuffer[g])
             {
                 _bandBuffer[g] -= _bufferDecrease[g];
-                _bufferDecrease[g] *= 1.2f;
+                _bufferDecrease[g] *= freqDecreaseFloat;
             }
         }
 
