@@ -29,9 +29,7 @@ public class DebugScreen : MonoBehaviour
     void Update()
     {
 
-        string debugText = "Chris Finn's Game Engines Assignment";
-        debugText += "\n";
-        debugText += frameRate + " fps";
+        string debugText = frameRate + " fps";
         debugText += "\n\n";
         debugText += "XYZ: " + (Mathf.FloorToInt(world.player.transform.position.x) - halfWorldSizeInVoxels) + " / " + Mathf.FloorToInt(world.player.transform.position.y) + " / " + (Mathf.FloorToInt(world.player.transform.position.z) - halfWorldSizeInVoxels);
         debugText += "\n";

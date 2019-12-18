@@ -11,6 +11,10 @@ public class OptionsForAudioScript : MonoBehaviour
     public GameObject menuBG;
     public GameObject player;
     public GameObject cam;
+    public GameObject audioSound;
+    public GameObject[] lights = new GameObject[3];
+
+    public Slider volume;
 
     public bool sparksActive;
 
@@ -20,17 +24,15 @@ public class OptionsForAudioScript : MonoBehaviour
         sparks.SetActive(false);
         openMenu.enabled = false;
         menuBG.SetActive(false);
+
+        lights = GameObject.FindGameObjectsWithTag("Lights");
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (sparksActive)
-            sparks.SetActive(true);
-
-        if (!sparksActive)
-            sparks.SetActive(false);
+        audioSound.GetComponent<AudioSource>().volume = volume.value;
 
     }
 
@@ -79,13 +81,37 @@ public class OptionsForAudioScript : MonoBehaviour
 
     public void activateSparks()
     {
-        sparksActive = true;
+        sparks.SetActive(true);
 
     }
 
     public void deactivateSparks()
     {
-        sparksActive = false;
+        sparks.SetActive(false);
+
+    }
+
+    public void activateLights()
+    {
+
+       // lights = GameObject.FindGameObjectsWithTag("Lights");
+
+        foreach (GameObject light in lights)
+        {
+            light.SetActive(true);
+        }
+
+    }
+
+    public void deactivateLights()
+    {
+
+       // lights = GameObject.FindGameObjectsWithTag("Lights");
+
+        foreach (GameObject light in lights)
+        {
+            light.SetActive(false);
+        }
 
     }
 
