@@ -13,7 +13,7 @@ public class ParamCube : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _scaleMultiplier = 6f;
+        _scaleMultiplier = 3f;
     }
 
     // Update is called once per frame
@@ -27,5 +27,21 @@ public class ParamCube : MonoBehaviour
         {
             transform.localScale = new Vector3(transform.localScale.x, (AudioVisScript._freqBands[_band] * _scaleMultiplier) + _startScale, transform.localScale.z);
         }
+
+        if(_band == 4 && gameObject.tag == "BoxBlocks")
+        {
+            _scaleMultiplier = 2f;
+        }
+
+        if((_band == 5 && gameObject.tag == "BoxBlocks"))
+        {
+            _scaleMultiplier = 2f;
+        }
+
+        if (_band == 6 && gameObject.tag == "BoxBlocks")
+        {
+            _scaleMultiplier = 2.5f;
+        }
+
     }
 }

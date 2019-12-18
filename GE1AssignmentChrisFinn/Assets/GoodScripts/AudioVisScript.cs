@@ -15,6 +15,8 @@ public class AudioVisScript : MonoBehaviour
 
     float[] _bufferDecrease = new float[8];
 
+    public AudioClip songOne, songTwo, songThree, songFour;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -84,6 +86,30 @@ public class AudioVisScript : MonoBehaviour
 
         }
 
+    }
+
+    public void playSongOne()
+    {
+        myAudio.clip = songOne;
+        myAudio.Play();
+    }
+
+    public void playSongTwo()
+    {
+        myAudio.clip = songTwo;
+        myAudio.Play();
+    }
+
+    public void playSongThree()
+    {
+        myAudio.clip = songThree;
+        myAudio.Play();
+    }
+
+    public void playSongFour()
+    {
+        myAudio.clip = songFour;
+        myAudio.Play();
     }
 
 }
