@@ -21,8 +21,8 @@ What I am most proud of:
  
 Useful resources:
 
-[Youtube](https://www.youtube.com/watch?v=h66IN1Pndd0&list=PLVsTSlfj0qsWEJ-5eMtXsYp03Y9yF1dEn&index=1)
-[Youtube](https://www.youtube.com/watch?v=4Av788P9stk&list=PL3POsQzaCw53p2tA6AWf7_AWgplskR0Vo&index=2)
+[Youtube Minecraft Tutorial](https://www.youtube.com/watch?v=h66IN1Pndd0&list=PLVsTSlfj0qsWEJ-5eMtXsYp03Y9yF1dEn&index=1)
+[Youtube Audio Vis Tutorial](https://www.youtube.com/watch?v=4Av788P9stk&list=PL3POsQzaCw53p2tA6AWf7_AWgplskR0Vo&index=2)
 
 These 2 videos belong to playlists that are extremely helpful and benefited me a lot.
 
@@ -32,4 +32,4 @@ Very helpful website for programming in Unity.
 
 My Youtube video:
 
-[Youtube](https://www.youtube.com/watch?v=xdw1VA2-BzM)
+[Youtube My Assignment Video](https://www.youtube.com/watch?v=xdw1VA2-BzM)
