@@ -7,6 +7,8 @@ public class NewPlayerScript : MonoBehaviour
 
     private World world;
 
+    public Transform cam;
+
     public float speed;
     public float gravity = -9.8f;
     public float jumpHeight = 5f;
@@ -28,6 +30,12 @@ public class NewPlayerScript : MonoBehaviour
     public bool isGrounded;
     public bool isSprinting;
     public bool jumpRequest;
+
+    public Transform highlightBlock;
+    public Transform placeBlock;
+
+    public float checkIncrement = 0.1f;
+    public float reach = 8f;
 
     // Start is called before the first frame update
     void Start()
@@ -121,6 +129,19 @@ public class NewPlayerScript : MonoBehaviour
         {
             jumpRequest = true;
         }
+    }
+    
+    private void placeCursorBlocks()
+    {
+
+        float step = checkIncrement;
+        Vector3 lastPos = new Vector3();
+
+        while ( step < reach)
+        {
+            
+        }
+
     }
 
     private float checkDownSpeed(float downSpeed)
