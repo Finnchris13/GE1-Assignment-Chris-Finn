@@ -8,7 +8,9 @@ public class OptionsForAudioScript : MonoBehaviour
 
     public GameObject sparks;
     public Text openMenu;
-    public Image menuBG;
+    public GameObject menuBG;
+    public GameObject player;
+    public GameObject cam;
 
     public bool sparksActive;
 
@@ -17,7 +19,7 @@ public class OptionsForAudioScript : MonoBehaviour
     {
         sparks.SetActive(false);
         openMenu.enabled = false;
-        menuBG.enabled = false;
+        menuBG.SetActive(false);
     }
 
     // Update is called once per frame
@@ -47,7 +49,19 @@ public class OptionsForAudioScript : MonoBehaviour
         if(other.tag == "Player" && Input.GetKeyDown(KeyCode.E))
         {
             openMenu.enabled = false;
-            menuBG.enabled = true;
+            menuBG.SetActive(true);
+            player.GetComponent<PlayerController>().enabled = false;
+            cam.GetComponent<CameraScript>().enabled = false;
+            Cursor.lockState = CursorLockMode.None;
+        }
+
+        if(other.tag == "Player" && Input.GetKeyDown(KeyCode.Escape))
+        {
+            openMenu.enabled = true;
+            menuBG.SetActive(false);
+            player.GetComponent<PlayerController>().enabled = true;
+            cam.GetComponent<CameraScript>().enabled = true;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
     }
@@ -57,8 +71,21 @@ public class OptionsForAudioScript : MonoBehaviour
         if (other.tag == "Player")
         {
             openMenu.enabled = false;
-            menuBG.enabled = false;
+            menuBG.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
         }
+
+    }
+
+    public void activateSparks()
+    {
+        sparksActive = true;
+
+    }
+
+    public void deactivateSparks()
+    {
+        sparksActive = false;
 
     }
 
