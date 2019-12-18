@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParamCube : MonoBehaviour
+public class CircleofBlocksScript : MonoBehaviour
 {
 
     public int _band;
@@ -13,7 +13,7 @@ public class ParamCube : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _scaleMultiplier = 6f;
+        
     }
 
     // Update is called once per frame
